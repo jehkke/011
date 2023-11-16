@@ -5,23 +5,20 @@
 
 int main(int argc, char *argv[]){
 	
-	int i;
-	int grade[5];
-	int average=0;
+	char *pc;
+	int *pi;
+	double *pd;
 	
-	for (i=0;i<5;i++)
-	{
-		printf("input value [%i] =" , i);
-		scanf("%d", &grade[i]);
-	}
+	pc=(char*)10000;     // three is pointing same address 
+	pi=(int*)10000;
+	pd=(double*)10000;
 	
-	for (i=0;i<5;i++)
-	{
-		printf("grade[%i]= %i\n",i,*(grade+i)); // +i is pointer's munbub
-		average= average + *(grade+i)/5;
-	}
-	printf("average= %i\n", average);
+	printf("before increase : pc=%p, pi=%p,pd=%p\n",pc,pi,pd);
 	
+	pc++;
+	pi++;
+	pd++;
+	printf("after increase : pc=%p,pi=%p,pd=%p\n",pc,pi,pd);// char: 1++, int: 4++, double: 8++
 	system("PAUSE");
 	return 0;
 }
